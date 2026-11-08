@@ -4,6 +4,10 @@
   --muted: #65675f;
   --line: #d3d4ca;
   --accent: #c9ef71;
+  --hero-background: var(--paper);
+  --diffraction-pink: #e971a2;
+  --diffraction-green: #719f39;
+  --diffraction-red: #d94d47;
 }
 
 * { box-sizing: border-box; }
@@ -15,21 +19,22 @@ a:focus-visible { outline: 3px solid #536e00; outline-offset: 4px; }
 .skip-link:focus { top: 16px; }
 .site-header { height: 90px; display: flex; align-items: center; gap: 48px; padding: 0 5%; border-bottom: 1px solid var(--ink); }
 .wordmark, .footer-logo { font-size: 30px; font-weight: 900; letter-spacing: -2px; text-decoration: none; }
-.wordmark span, .footer-logo span { color: #769c20; }
+.wordmark { display: inline-block; transform: rotate(-5deg); }
 .header-edition { font-size: 10px; line-height: 1.25; text-transform: uppercase; letter-spacing: .08em; }
 .site-header nav { margin-left: auto; display: flex; align-items: center; gap: 36px; font-size: 13px; font-weight: 700; }
 .site-header nav a { text-decoration: none; }
 .site-header nav a:hover, .site-header nav a[aria-current] { text-decoration: underline; text-underline-offset: 5px; }
 .site-header nav span { margin-left: 5px; }
 
-.hero { position: relative; min-height: 650px; padding: 26px 5% 22px; background: var(--accent); overflow: hidden; display: flex; flex-direction: column; }
+.hero { position: relative; min-height: 650px; padding: 26px 5% 22px; background: var(--hero-background); overflow: hidden; display: flex; flex-direction: column; }
 .hero-top, .hero-index { display: flex; justify-content: space-between; gap: 20px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; }
 .hero-title { position: relative; margin: auto -1% 0; height: clamp(150px, 23vw, 350px); transform: rotate(-5deg); transform-origin: center; font-size: clamp(95px, 18.1vw, 280px); font-weight: 900; line-height: 1; letter-spacing: -.09em; white-space: nowrap; }
 .hero-title-main, .hero-title-echo { position: absolute; top: 0; left: 0; }
 .hero-title-main { z-index: 2; }
-.hero-title-echo { color: transparent; -webkit-text-stroke: 1px rgba(23, 24, 21, .5); }
-.echo-one { transform: translate(1.5%, -10%); }
-.echo-two { transform: translate(3%, -20%); opacity: .5; }
+.hero-title-echo { color: transparent; -webkit-text-stroke: 1.5px currentColor; }
+.echo-one { color: var(--diffraction-pink); transform: translate(1.5%, -10%); }
+.echo-two { color: var(--diffraction-green); transform: translate(3%, -20%); }
+.echo-three { color: var(--diffraction-red); transform: translate(4.5%, -30%); }
 .hero-bottom { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin: 10px 0 70px; }
 .hero-subtitle { max-width: 580px; margin: 0; font-size: clamp(23px, 3vw, 42px); line-height: 1.08; letter-spacing: -.04em; font-weight: 700; }
 .hero-side { display: flex; align-items: end; gap: 28px; font-size: 12px; line-height: 1.4; }
@@ -44,10 +49,15 @@ a:focus-visible { outline: 3px solid #536e00; outline-offset: 4px; }
 .small-square { width: 9px; height: 9px; background: #8bae37; }
 h1, h2, h3, p { margin-top: 0; }
 .about h1, .programme h2, .schedule-heading h1, .event-heading h1 { margin: 0; font-size: clamp(48px, 7vw, 104px); line-height: .96; letter-spacing: -.065em; }
+.about h1, .event-heading h1 { font-size: clamp(24px, 3.5vw, 52px); }
 em { font-family: Georgia, serif; font-weight: 400; }
 .about-copy { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 65px; max-width: 850px; }
 .about-copy p, .programme-heading > p { line-height: 1.6; color: #4f514b; }
 .about-copy .lead { color: var(--ink); font-size: 21px; line-height: 1.3; font-weight: 700; letter-spacing: -.03em; }
+.supporters { margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--line); }
+.supporters h2 { font-size: 11px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
+.supporters ul { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 24px; padding: 0; margin: 25px 0 0; list-style: none; }
+.supporters li { font-size: 16px; font-weight: 700; line-height: 1.3; }
 .programme { background: #e9e9df; }
 .programme-heading { display: flex; justify-content: space-between; gap: 40px; align-items: end; }
 .programme-heading > p { max-width: 280px; margin-bottom: 4px; }
@@ -59,9 +69,12 @@ em { font-family: Georgia, serif; font-weight: 400; }
 .button:hover { background: #3c4930; }
 .button span { font-size: 18px; }
 
-.schedule-page, .event-page { padding: 80px 5% 110px; }
+.schedule-page, .event-page, .calls-page { padding: 80px 5% 110px; }
 .schedule-heading { display: flex; justify-content: space-between; align-items: end; gap: 50px; margin-bottom: 80px; }
-.schedule-heading h1 { font-size: clamp(50px, 6.5vw, 90px); }
+.schedule-heading h1 { font-size: clamp(25px, 3.25vw, 45px); }
+.calls-list { margin-top: 0; }
+.calls-list a { display: flex; justify-content: space-between; gap: 20px; padding: 22px 0; border-bottom: 1px solid #aeb0a4; font-size: clamp(20px, 2.4vw, 32px); font-weight: 700; letter-spacing: -.04em; text-decoration: none; }
+.calls-list a:hover { text-decoration: underline; text-underline-offset: 5px; }
 .schedule-intro { max-width: 300px; line-height: 1.5; }
 .notice { color: var(--muted); font-size: 13px; }
 .calendar-bar { display: flex; justify-content: space-between; align-items: end; gap: 20px; padding: 25px 0; border-top: 1px solid var(--ink); }
@@ -137,13 +150,15 @@ em { font-family: Georgia, serif; font-weight: 400; }
   .site-footer { flex-wrap: wrap; }
 }
 @media (max-width: 480px) {
+  .site-header { height: auto; min-height: 75px; padding-top: 18px; padding-bottom: 18px; flex-wrap: wrap; }
+  .site-header nav { width: 100%; margin-left: 0; gap: 16px; font-size: 12px; }
   .hero { min-height: 520px; }
   .hero-title { font-size: 17.5vw; }
   .hero-index span:last-child { display: none; }
   .about-copy, .details-grid { grid-template-columns: 1fr; gap: 15px; }
   .programme-list > div { grid-template-columns: 30px 1fr; }
   .programme-list span:last-child { grid-column: 2; }
-  .schedule-page, .event-page { padding-top: 55px; }
+  .schedule-page, .event-page, .calls-page { padding-top: 55px; }
   .calendar-status { display: none; }
   .site-footer { flex-direction: column; }
 }

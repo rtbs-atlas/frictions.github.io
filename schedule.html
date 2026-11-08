@@ -6,12 +6,12 @@ permalink: /schedule/
 <section class="schedule-page">
   <div class="schedule-heading">
     <div>
-      <p class="eyebrow"><span class="small-square"></span> The programme / 2027</p>
+      <p class="eyebrow"><span class="small-square"></span> The programme / 1–5 March 2027</p>
       <h1>Five days.<br><em>Many perspectives.</em></h1>
     </div>
     <div class="schedule-intro">
       <p>Explore the symposium at a glance. Select an event to find out more.</p>
-      <p class="notice">Programme preview: dates, times and event details are placeholders and will be confirmed.</p>
+      <p class="notice">Programme preview: session times and event details are placeholders and will be confirmed.</p>
     </div>
   </div>
   <div class="calendar-bar">
@@ -33,8 +33,10 @@ permalink: /schedule/
       </div>
       {% assign events = site.events | sort: 'slot' %}
       {% for day in (1..5) %}
-      <section class="calendar-day" aria-label="Day {{ day }}">
-        <div class="day-header"><span>DAY</span><strong>0{{ day }}</strong><small>Date TBC</small></div>
+      {% assign date_index = day | minus: 1 %}
+      {% assign day_date = site.conference_dates[date_index] %}
+      <section class="calendar-day" aria-label="Day {{ day }}, {{ day_date }} 2027">
+        <div class="day-header"><span>DAY</span><strong>0{{ day }}</strong><small>{{ day_date }}</small></div>
         <div class="day-events">
           {% for event in events %}
             {% if event.day == day %}
@@ -48,5 +50,5 @@ permalink: /schedule/
       {% endfor %}
     </div>
   </div>
-  <p class="calendar-note">All times shown are indicative. Please check back for the confirmed programme.</p>
+  <p class="calendar-note">All session times shown are indicative. Please check back for the confirmed programme.</p>
 </section>
