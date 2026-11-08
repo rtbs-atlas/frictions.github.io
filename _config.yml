@@ -1,0 +1,12 @@
+title: Frictions
+description: Science-Making at the Intersections of Art, Ecology and Architecture
+collections:
+  events:
+    output: true
+    permalink: /events/:name/
+defaults:
+  - scope:
+      path: ""
+      type: events
+    values:
+      layout: event
