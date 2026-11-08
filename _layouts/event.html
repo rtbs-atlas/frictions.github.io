@@ -10,7 +10,8 @@ layout: default
       <p class="event-intro">Part of the Frictions 2027 Symposium</p>
     </div>
     <div class="event-meta">
-      <div><span>When</span><strong>Day {{ page.day }} · {{ page.time }}</strong><small>Time and date to be confirmed</small></div>
+      {% assign date_index = page.day | minus: 1 %}
+      <div><span>When</span><strong>{{ site.conference_dates[date_index] }} 2027 · {{ page.time }}</strong><small>Session time to be confirmed</small></div>
       <div><span>Where</span><strong>To be announced</strong></div>
     </div>
   </div>

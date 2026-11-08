@@ -10,20 +10,21 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
-    <a class="wordmark" href="{{ '/' | relative_url }}" aria-label="Frictions, home">frictions<span>.</span></a>
-    <span class="header-edition">A symposium<br>in 2027</span>
+    <a class="wordmark" href="{{ '/' | relative_url }}" aria-label="Frictions, home">frictions</a>
+    <span class="header-edition">A symposium<br>1–5 March 2027</span>
     <nav aria-label="Main navigation">
-      <a href="{{ '/' | relative_url }}#about">About</a>
+      <a href="{{ '/' | relative_url }}#about">Conference abstract</a>
       <a href="{{ '/schedule/' | relative_url }}"{% if page.url == '/schedule/' %} aria-current="page"{% endif %}>Schedule <span aria-hidden="true">↗</span></a>
+      <a href="{{ '/calls/' | relative_url }}"{% if page.url contains '/calls/' %} aria-current="page"{% endif %}>Calls</a>
     </nav>
   </header>
   <main id="main">
     {{ content }}
   </main>
   <footer class="site-footer">
-    <a class="footer-logo" href="{{ '/' | relative_url }}">frictions<span>.</span></a>
+    <a class="footer-logo" href="{{ '/' | relative_url }}">frictions</a>
     <p>Science-Making at the Intersections of<br>Art, Ecology and Architecture</p>
-    <p>2027 Symposium<br><span>Details to come.</span></p>
+    <p>2027 Symposium<br><span>1–5 March 2027</span></p>
     <a href="#main">Back to top ↑</a>
   </footer>
 </body>
