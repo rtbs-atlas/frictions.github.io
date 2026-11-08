@@ -31,7 +31,7 @@ a:focus-visible { outline: 3px solid #536e00; outline-offset: 4px; }
 .hero-title { position: relative; margin: auto -1% 0; height: clamp(150px, 23vw, 350px); transform: rotate(-5deg); transform-origin: center; font-size: clamp(95px, 18.1vw, 280px); font-weight: 900; line-height: 1; letter-spacing: -.09em; white-space: nowrap; }
 .hero-title-main, .hero-title-echo { position: absolute; top: 0; left: 0; }
 .hero-title-main { z-index: 2; }
-.hero-title-echo { color: transparent; opacity: .5; -webkit-text-stroke: 1.5px currentColor; }
+.hero-title-echo { -webkit-text-fill-color: transparent; -webkit-text-stroke: 1.5px currentColor; }
 .echo-one { color: var(--diffraction-pink); transform: translate(1.5%, -10%); }
 .echo-two { color: var(--diffraction-green); transform: translate(3%, -20%); }
 .echo-three { color: var(--diffraction-red); transform: translate(4.5%, -30%); }
