@@ -1,0 +1,29 @@
+---
+layout: default
+---
+<article class="event-page">
+  <a class="back-link" href="{{ '/schedule/' | relative_url }}">← Back to schedule</a>
+  <div class="event-heading">
+    <div>
+      <p class="eyebrow"><span class="type-dot {{ page.kind }}"></span>{{ page.category }} / Day {{ page.day }}</p>
+      <h1>{{ page.title }}</h1>
+      <p class="event-intro">Part of the Frictions 2027 Symposium</p>
+    </div>
+    <div class="event-meta">
+      <div><span>When</span><strong>Day {{ page.day }} · {{ page.time }}</strong><small>Time and date to be confirmed</small></div>
+      <div><span>Where</span><strong>To be announced</strong></div>
+    </div>
+  </div>
+  <div class="event-body">
+    <div class="section-label">01 / The event</div>
+    <div>
+      <h2>About this event</h2>
+      {% assign event_abstract = content | strip %}
+      {% if event_abstract != empty %}{{ content }}{% else %}<p>Event abstract coming soon. More information about this session will be shared as the programme develops.</p>{% endif %}
+      <div class="details-grid">
+        <div><h3>Presenter / speaker</h3><p>{{ page.speaker | default: 'To be announced' }}</p></div>
+        <div><h3>Participants</h3><p>{{ page.participants | default: 'To be announced' }}</p></div>
+      </div>
+    </div>
+  </div>
+</article>

@@ -1,0 +1,52 @@
+---
+layout: default
+title: Schedule
+permalink: /schedule/
+---
+<section class="schedule-page">
+  <div class="schedule-heading">
+    <div>
+      <p class="eyebrow"><span class="small-square"></span> The programme / 2027</p>
+      <h1>Five days.<br><em>Many perspectives.</em></h1>
+    </div>
+    <div class="schedule-intro">
+      <p>Explore the symposium at a glance. Select an event to find out more.</p>
+      <p class="notice">Programme preview: dates, times and event details are placeholders and will be confirmed.</p>
+    </div>
+  </div>
+  <div class="calendar-bar">
+    <div><span class="calendar-kicker">FRICTIONS 2027</span><h2>Symposium schedule</h2></div>
+    <span class="calendar-status"><span></span> Programme preview</span>
+  </div>
+  <div class="legend" aria-label="Event categories">
+    <span><i class="type-dot workshop"></i> Methods Workshops</span>
+    <span><i class="type-dot seminar"></i> Seminars</span>
+    <span><i class="type-dot panel"></i> Panels and Lectures</span>
+    <span><i class="type-dot exhibition"></i> Exhibition</span>
+  </div>
+  <p class="scroll-hint">Scroll sideways to see all five days →</p>
+  <div class="calendar-scroll" role="region" aria-label="Five-day schedule; scroll horizontally to see all days" tabindex="0">
+    <div class="calendar">
+      <div class="time-column" aria-hidden="true">
+        <div class="day-header">TIME</div>
+        <div class="time-slots"><span>09:00</span><span>10:00</span><span>11:00</span><span>12:00</span><span>13:00</span><span>14:00</span><span>15:00</span><span>16:00</span></div>
+      </div>
+      {% assign events = site.events | sort: 'slot' %}
+      {% for day in (1..5) %}
+      <section class="calendar-day" aria-label="Day {{ day }}">
+        <div class="day-header"><span>DAY</span><strong>0{{ day }}</strong><small>Date TBC</small></div>
+        <div class="day-events">
+          {% for event in events %}
+            {% if event.day == day %}
+            <a class="event-card {{ event.kind }}" style="--slot: {{ event.slot }}; --length: {{ event.length }}" href="{{ event.url | relative_url }}">
+              <span>{{ event.time }}</span><strong>{{ event.title }}</strong><small>{{ event.category }}</small><span class="card-arrow" aria-hidden="true">↗</span>
+            </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </section>
+      {% endfor %}
+    </div>
+  </div>
+  <p class="calendar-note">All times shown are indicative. Please check back for the confirmed programme.</p>
+</section>
