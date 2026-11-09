@@ -6,4 +6,9 @@ day: 3
 time: "15:00–17:00"
 slot: 7
 length: 2
+venue: ""
+session_organizer: ""
+speakers: []
+participants: []
+respondents: []
 ---

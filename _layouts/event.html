@@ -12,18 +12,23 @@ layout: default
     <div class="event-meta">
       {% assign date_index = page.day | minus: 1 %}
       <div><span>When</span><strong>{{ site.conference_dates[date_index] }} 2027 · {{ page.time }}</strong><small>Session time to be confirmed</small></div>
-      <div><span>Where</span><strong>To be announced</strong></div>
+      <div><span>Venue</span><strong>{{ page.venue | default: 'To be announced' }}</strong></div>
     </div>
   </div>
   <div class="event-body">
-    <div class="section-label">01 / The event</div>
+    <div class="section-label">01 / Session details</div>
     <div>
-      <h2>About this event</h2>
+      <h2>Abstract</h2>
       {% assign event_abstract = content | strip %}
-      {% if event_abstract != empty %}{{ content }}{% else %}<p>Event abstract coming soon. More information about this session will be shared as the programme develops.</p>{% endif %}
+      {% if event_abstract != empty %}{{ content }}{% else %}<p>Abstract coming soon. More information about this session will be shared as the programme develops.</p>{% endif %}
+      {% assign speakers = page.speakers | join: ", " | default: 'To be announced' %}
+      {% assign participants = page.participants | join: ", " | default: 'To be announced' %}
+      {% assign respondents = page.respondents | join: ", " | default: 'To be announced' %}
       <div class="details-grid">
-        <div><h3>Presenter / speaker</h3><p>{{ page.speaker | default: 'To be announced' }}</p></div>
-        <div><h3>Participants</h3><p>{{ page.participants | default: 'To be announced' }}</p></div>
+        <div><h3>Session organizer</h3><p>{{ page.session_organizer | default: 'To be announced' }}</p></div>
+        <div><h3>Speaker(s)</h3><p>{{ speakers }}</p></div>
+        <div><h3>Participants</h3><p>{{ participants }}</p></div>
+        <div><h3>Respondents</h3><p>{{ respondents }}</p></div>
       </div>
     </div>
   </div>
