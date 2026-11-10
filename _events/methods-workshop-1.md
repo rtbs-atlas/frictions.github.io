@@ -1,13 +1,13 @@
 ---
-title: Methods Workshop 01
-category: Methods Workshops
+title: Engels in Manchester
+category: Walk
 kind: workshop
 day: 1
-time: "09:00–12:00"
+time: "12:00–17:00"
 slot: 1
-length: 3
-venue: ""
-session_organizer: ""
+length: 5
+venue: "Manchester-Salford"
+session_organizer: "Dr. Fadi Shayya"
 speakers: []
 participants: []
 respondents: []
