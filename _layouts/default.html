@@ -13,9 +13,10 @@
     <a class="wordmark" href="{{ '/' | relative_url }}" aria-label="Frictions, home">frictions</a>
     <span class="header-edition">A symposium<br>1–5 March 2027</span>
     <nav aria-label="Main navigation">
-      <a href="{{ '/' | relative_url }}#about">Conference abstract</a>
+      <a href="{{ '/' | relative_url }}#about">About</a>
       <a href="{{ '/schedule/' | relative_url }}"{% if page.url == '/schedule/' %} aria-current="page"{% endif %}>Schedule <span aria-hidden="true">↗</span></a>
       <a href="{{ '/' | relative_url }}#calls"{% if page.url contains '/calls/' %} aria-current="page"{% endif %}>Calls</a>
+      <a href="{{ '/participants/' | relative_url }}"{% if page.url == '/participants/' %} aria-current="page"{% endif %}>Participants</a>
     </nav>
   </header>
   <main id="main">
