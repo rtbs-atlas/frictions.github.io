@@ -5,14 +5,15 @@ layout: default
   <a class="back-link" href="{{ '/schedule/' | relative_url }}">← Back to schedule</a>
   <div class="event-heading">
     <div>
-      <p class="eyebrow"><span class="type-dot {{ page.kind }}"></span>{{ page.category }} / Day {{ page.day }}</p>
       <h1>{{ page.title }}</h1>
-      <p class="event-intro">Part of the Frictions 2027 Symposium</p>
+      {% if page.category != empty %}<p class="event-intro">{{ page.category }}</p>{% endif %}
     </div>
     <div class="event-meta">
       {% assign date_index = page.day | minus: 1 %}
       <div><span>When</span><strong>{{ site.conference_dates[date_index] }} 2027 · {{ page.time }}</strong><small>Session time to be confirmed</small></div>
-      <div><span>Venue</span><strong>{{ page.venue | default: 'To be announced' }}</strong></div>
+      {% if page.venue != empty %}
+      <div><span>Venue</span><strong>{{ page.venue }}{% if page.map_url != empty %} <a class="map-pin" href="{{ page.map_url }}" target="_blank" rel="noopener" aria-label="Open {{ page.venue | escape }} in Google Maps" title="Open in Google Maps">📍</a>{% endif %}</strong></div>
+      {% endif %}
     </div>
   </div>
   <div class="event-body">
@@ -21,14 +22,14 @@ layout: default
       <h2>Abstract</h2>
       {% assign event_abstract = content | strip %}
       {% if event_abstract != empty %}{{ content }}{% else %}<p>Abstract coming soon. More information about this session will be shared as the programme develops.</p>{% endif %}
-      {% assign speakers = page.speakers | join: ", " | default: 'To be announced' %}
-      {% assign participants = page.participants | join: ", " | default: 'To be announced' %}
-      {% assign respondents = page.respondents | join: ", " | default: 'To be announced' %}
+      {% assign speakers = page.speakers | join: ", " %}
+      {% assign participants = page.participants | join: ", " %}
+      {% assign respondents = page.respondents | join: ", " %}
       <div class="details-grid">
-        <div><h3>Session organizer</h3><p>{{ page.session_organizer | default: 'To be announced' }}</p></div>
-        <div><h3>Speaker(s)</h3><p>{{ speakers }}</p></div>
-        <div><h3>Participants</h3><p>{{ participants }}</p></div>
-        <div><h3>Respondents</h3><p>{{ respondents }}</p></div>
+        {% if page.session_organizer != empty %}<div><h3>Session organizer</h3><p>{{ page.session_organizer }}</p></div>{% endif %}
+        {% if speakers != empty %}<div><h3>Speaker(s)</h3><p>{{ speakers }}</p></div>{% endif %}
+        {% if participants != empty %}<div><h3>Participants</h3><p>{{ participants }}</p></div>{% endif %}
+        {% if respondents != empty %}<div><h3>Respondents</h3><p>{{ respondents }}</p></div>{% endif %}
       </div>
     </div>
   </div>

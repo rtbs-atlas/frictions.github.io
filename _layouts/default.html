@@ -15,7 +15,7 @@
     <nav aria-label="Main navigation">
       <a href="{{ '/' | relative_url }}#about">Conference abstract</a>
       <a href="{{ '/schedule/' | relative_url }}"{% if page.url == '/schedule/' %} aria-current="page"{% endif %}>Schedule <span aria-hidden="true">↗</span></a>
-      <a href="{{ '/calls/' | relative_url }}"{% if page.url contains '/calls/' %} aria-current="page"{% endif %}>Calls</a>
+      <a href="{{ '/' | relative_url }}#calls"{% if page.url contains '/calls/' %} aria-current="page"{% endif %}>Calls</a>
     </nav>
   </header>
   <main id="main">

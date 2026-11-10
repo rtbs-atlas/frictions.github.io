@@ -13,7 +13,7 @@ permalink: /schedule/
     <div class="calendar">
       <div class="time-column" aria-hidden="true">
         <div class="day-header">TIME</div>
-        <div class="time-slots"><span>09:00</span><span>10:00</span><span>11:00</span><span>12:00</span><span>13:00</span><span>14:00</span><span>15:00</span><span>16:00</span></div>
+        <div class="time-slots"><span>10:00</span><span>11:00</span><span>12:00</span><span>13:00</span><span>14:00</span><span>15:00</span><span>16:00</span><span>17:00</span><span>18:00</span></div>
       </div>
       {% assign events = site.events | sort: 'slot' %}
       {% for day in (1..5) %}
@@ -24,9 +24,19 @@ permalink: /schedule/
         <div class="day-events">
           {% for event in events %}
             {% if event.day == day %}
-            <a class="event-card {{ event.kind }}" style="--slot: {{ event.slot }}; --length: {{ event.length }}" href="{{ event.url | relative_url }}">
+            {% assign event_start = event.slot | plus: 0 %}
+            {% assign event_end = event_start | plus: event.length %}
+            {% assign visible_start = event_start %}
+            {% if visible_start < 10 %}{% assign visible_start = 10 %}{% endif %}
+            {% assign visible_end = event_end %}
+            {% if visible_end > 19 %}{% assign visible_end = 19 %}{% endif %}
+            {% assign visible_length = visible_end | minus: visible_start %}
+            {% assign calendar_slot = visible_start | minus: 9 %}
+            {% if visible_length > 0 %}
+            <a class="event-card {{ event.kind }}" style="--slot: {{ calendar_slot }}; --length: {{ visible_length }}" href="{{ event.url | relative_url }}">
               <span>{{ event.time }}</span><strong>{{ event.title }}</strong><small>{{ event.category }}</small><span class="card-arrow" aria-hidden="true">↗</span>
             </a>
+            {% endif %}
             {% endif %}
           {% endfor %}
         </div>

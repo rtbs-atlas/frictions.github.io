@@ -4,7 +4,7 @@ category: Seminars
 kind: seminar
 day: 3
 time: "13:00–15:00"
-slot: 5
+slot: 13
 length: 2
 venue: ""
 session_organizer: ""

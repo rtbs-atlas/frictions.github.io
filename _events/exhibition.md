@@ -4,7 +4,7 @@ category: Exhibition
 kind: exhibition
 day: 5
 time: "09:00–17:00"
-slot: 1
+slot: 9
 length: 8
 venue: ""
 session_organizer: ""
