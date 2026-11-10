@@ -10,7 +10,7 @@ layout: default
     </div>
     <div class="event-meta">
       {% assign date_index = page.day | minus: 1 %}
-      <div><span>When</span><strong>{{ site.conference_dates[date_index] }} 2027 · {{ page.time }}</strong><small>Session time to be confirmed</small></div>
+      <div><span>When</span><strong>{{ site.conference_dates[date_index] }} 2027 · {{ page.time }}</strong></div>
       {% if page.venue != empty %}
       <div><span>Venue</span><strong>{{ page.venue }}{% if page.map_url != empty %} <a class="map-pin" href="{{ page.map_url }}" target="_blank" rel="noopener" aria-label="Open {{ page.venue | escape }} in Google Maps" title="Open in Google Maps">📍</a>{% endif %}</strong></div>
       {% endif %}
