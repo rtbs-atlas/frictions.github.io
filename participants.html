@@ -9,6 +9,22 @@ permalink: /participants/
       <p class="eyebrow"><span class="small-square"></span> Frictions / 1–5 March 2027</p>
       <h1>Participants</h1>
     </div>
-    <p class="schedule-intro">The list of participants will be shared here soon.</p>
   </div>
+  {% assign participants = site.participants | sort_natural: 'title' %}
+  {% if participants.size > 0 %}
+  <div class="participants-grid">
+    {% for participant in participants %}
+    <a class="participant-card" href="{{ participant.url | relative_url }}">
+      {% if participant.image and participant.image != empty %}
+      <img class="participant-photo" src="{{ participant.image | relative_url | escape }}" alt="" loading="lazy">
+      {% else %}
+      <span class="participant-photo participant-photo-placeholder" aria-hidden="true"></span>
+      {% endif %}
+      <span>{{ participant.title | escape }}</span>
+    </a>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="schedule-intro">The list of participants will be shared here soon.</p>
+  {% endif %}
 </section>

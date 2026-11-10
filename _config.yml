@@ -10,9 +10,17 @@ collections:
   events:
     output: true
     permalink: /events/:name/
+  participants:
+    output: true
+    permalink: /participants/:name/
 defaults:
   - scope:
       path: ""
       type: events
     values:
       layout: event
+  - scope:
+      path: ""
+      type: participants
+    values:
+      layout: participant

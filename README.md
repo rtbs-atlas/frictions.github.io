@@ -19,5 +19,23 @@ The call pages are placeholders; edit the files under `calls/` when the call
 details are ready. The landing-page background can be changed using the
 `--hero-background` CSS variable; the previous green is `var(--accent)`.
 
+To add a participant, create a Markdown file in `_participants/`, for example
+`_participants/jane-example.md`:
+
+```markdown
+---
+title: Jane Example
+image: /assets/images/jane-example.jpg
+links:
+  - label: Website
+    url: https://example.com/
+---
+A short biography goes here. Markdown formatting is supported.
+```
+
+Upload the photograph at the specified path. The image and links are optional;
+without an image a placeholder circle is shown. Each file automatically appears
+on the Participants page and has its own profile page.
+
 To preview the site locally, install Jekyll and run `jekyll serve` from the
 repository root. GitHub Pages builds the site from the repository.

@@ -1,0 +1,25 @@
+---
+layout: default
+---
+<article class="calls-page">
+  <a class="back-link" href="{{ '/participants/' | relative_url }}">← Back to participants</a>
+  <div class="participant-profile">
+    {% if page.image and page.image != empty %}
+    <img class="participant-photo" src="{{ page.image | relative_url | escape }}" alt="">
+    {% else %}
+    <span class="participant-photo participant-photo-placeholder" aria-hidden="true"></span>
+    {% endif %}
+    <div>
+      <div class="schedule-heading"><h1>{{ page.title | escape }}</h1></div>
+      <div class="participant-bio">{{ content }}</div>
+      {% if page.links and page.links != empty %}
+      <h2>Links</h2>
+      <ul class="participant-links">
+        {% for link in page.links %}
+        <li><a href="{{ link.url | escape }}">{{ link.label | escape }}</a></li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+  </div>
+</article>
