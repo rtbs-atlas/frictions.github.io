@@ -1,6 +1,6 @@
 ---
 title: Engels in Manchester
-category: Walk
+short_description: Walk
 kind: workshop
 day: 1
 time: "12:00–17:00"
