@@ -1,6 +1,6 @@
 ---
 title: Engels in Manchester
-short_description: Collaborative Walk in Manchester and Salford led by Dr Fadi Shayya.
+category: Collaborative Walk in Manchester and Salford led by Dr Fadi Shayya.
 kind: workshop
 day: 1
 time: "12:00–17:00"
