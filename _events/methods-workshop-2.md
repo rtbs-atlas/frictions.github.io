@@ -1,13 +1,13 @@
 ---
-title: Methods Workshop 02
-category: Methods Workshops
+title: Methods Workshop
+category: Small Group Methods Workshops with topic TBA
 kind: workshop
 day: 2
-time: "09:00–11:00"
-slot: 9
-length: 2
-venue: ""
-session_organizer: ""
+time: "10:00–13:00"
+slot: 10
+length: 3
+venue: "Room in University of Manchester"
+session_organizer: "Alejandra Ascencio Barón (Universidad de Los Andes)"
 speakers: []
 participants: []
 respondents: []
