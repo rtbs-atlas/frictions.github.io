@@ -1,13 +1,13 @@
 ---
-title: Methods Workshop 03
+title: Methods Workshop
 category: Methods Workshops
 kind: workshop
 day: 3
-time: "09:00–11:00"
-slot: 9
-length: 2
+time: "10:00–13:00"
+slot: 10
+length: 3
 venue: ""
-session_organizer: ""
+session_organizer: "Leonardo Parra-Agudelo, PhD (Universidad de Los Andes)"
 speakers: []
 participants: []
 respondents: []
