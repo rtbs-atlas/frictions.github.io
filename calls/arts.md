@@ -1,6 +1,6 @@
 ---
 layout: call
-title: Call for Arts
-permalink: /calls/arts/
+title: call for artwork
+permalink: /calls/artwork/
 ---
 Details of the call for arts will be shared here soon.
